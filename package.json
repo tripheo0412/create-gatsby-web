@@ -1,0 +1,32 @@
+{
+  "name": "create-gatsby-app",
+  "version": "1.0.0",
+  "description": "A CLI to bootstrap Gatsby app",
+  "main": "src/index.js",
+  "bin": {
+    "@tripheo2410/create-gatsby-app": "bin/create-gatsby-app",
+    "create-gatsby-app": "bin/create-gatsby-app"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "cli",
+    "create-gatsby-app"
+  ],
+  "author": "Tri Hoang <tripheo0412@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "arg": "^4.1.3",
+    "chalk": "^3.0.0",
+    "esm": "^3.2.25",
+    "execa": "^4.0.0",
+    "inquirer": "^7.0.4",
+    "listr": "^0.14.3",
+    "ncp": "^2.0.0",
+    "pkg-install": "^1.0.0"
+  }
+}

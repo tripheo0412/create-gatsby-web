@@ -1,0 +1,207 @@
+version: 2.1
+executors:
+  node-executor:
+    docker:
+      - image: circleci/node:10.16.0
+    working_directory: ~/repo
+
+jobs:
+  install-dependencies-test-lint:
+    executor: node-executor
+    steps:
+      - checkout
+      - attach_workspace:
+          at: ~/repo
+      - restore_cache:
+          keys:
+            - yarn-cache-{{ checksum "yarn.lock" }}
+      - run:
+          name: Install Dependencies
+          command: yarn install && npm rebuild
+      - run:
+          name: Check lint error
+          command: yarn lint
+      - run:
+          name: Testing
+          command: yarn ci-test
+      - save_cache:
+          key: yarn-cache-{{ checksum "yarn.lock" }}
+          paths:
+            - ./node_modules
+      - persist_to_workspace:
+          root: .
+          paths:
+            - ./node_modules
+
+  gatsby-build-preview-deploy:
+    executor: node-executor
+    steps:
+      - checkout
+      - attach_workspace:
+          at: ~/repo
+      - run:
+          name: Install JQ
+          command: sudo apt-get install jq
+      - run:
+          name: Create GitHub Gatsby Deployment
+          command: ./tasks/deployment/gatsby-deploy-start.sh > gatsby_deployment
+      - restore_cache:
+          keys:
+            - gatsby-public-cache-{{ .Branch }}
+      - run:
+          name: Gatsby Build
+          command: GATSBY_CPU_COUNT=2 yarn build
+      - save_cache:
+          key: gatsby-public-cache-{{ .Branch }}
+          paths:
+            - ./public
+      - run:
+          name: Add GitHub Gatsby Deployment success status
+          command: ./tasks/deployment/gatsby-deploy-end.sh success
+          when: on_success
+      - run:
+          name: Add GitHub Gatsby Deployment error status
+          command: ./tasks/deployment/gatsby-deploy-end.sh error
+          when: on_fail
+  storybook-build-preview-deploy:
+    executor: node-executor
+    steps:
+      - checkout
+      - attach_workspace:
+          at: ~/repo
+      - run:
+          name: Install JQ
+          command: sudo apt-get install jq
+      - run:
+          name: Create GitHub Storybook Deployment
+          command: ./tasks/deployment/storybook-deploy-start.sh > storybook_deployment
+      - restore_cache:
+          keys:
+            - v11-storybook-public-cache-{{ .Branch }}
+      - run:
+          name: Storybook Build
+          command: yarn build-storybook
+      - store_artifacts:
+          path: build-storybook
+      - save_cache:
+          key: v11-storybook-public-cache-{{ .Branch }}
+          paths:
+            - ./build-storybook
+      - run:
+          name: Add GitHub Storybook Deployment success status
+          command: ./tasks/deployment/storybook-deploy-end.sh success
+          when: on_success
+      - run:
+          name: Add GitHub Storybook Deployment error status
+          command: ./tasks/deployment/storybook-deploy-end.sh error
+          when: on_fail
+
+  gatsby-build-staging-deploy:
+    executor: node-executor
+    steps:
+      - checkout
+      - attach_workspace:
+          at: ~/repo
+      - run:
+          name: Install JQ
+          command: sudo apt-get install jq
+      - restore_cache:
+          keys:
+            - gatsby-public-cache-{{ .Branch }}
+      - run:
+          name: Gatsby Build
+          command: GATSBY_CPU_COUNT=2 yarn build
+      - save_cache:
+          key: gatsby-public-cache-{{ .Branch }}
+          paths:
+            - ./public
+      - run:
+          name: Netlify Deploy Gatsby
+          command: ./node_modules/.bin/netlify deploy --site $NETLIFY_SITE_ID_STAGING --auth $NETLIFY_ACCESS_TOKEN --prod --dir=public
+  storybook-build-staging-deploy:
+    executor: node-executor
+    steps:
+      - checkout
+      - attach_workspace:
+          at: ~/repo
+      - run:
+          name: Install JQ
+          command: sudo apt-get install jq
+      - restore_cache:
+          keys:
+            - v11-storybook-public-cache-{{ .Branch }}
+      - run:
+          name: Storybook Build
+          command: yarn build-storybook
+      - save_cache:
+          key: v11-storybook-public-cache-{{ .Branch }}
+          paths:
+            - ./build-storybook
+      - run:
+          name: Netlify Deploy Storybook
+          command: ./node_modules/.bin/netlify deploy --site $NETLIFY_SITE_ID_STORYBOOK --auth $NETLIFY_ACCESS_TOKEN --prod --dir=build-storybook
+  gatsby-build-release-deploy:
+    executor: node-executor
+    steps:
+      - checkout
+      - attach_workspace:
+          at: ~/repo
+      - run:
+          name: Install JQ
+          command: sudo apt-get install jq
+      - restore_cache:
+          keys:
+            - gatsby-public-cache-{{ .Branch }}
+      - run:
+          name: Gatsby Build
+          command: GATSBY_CPU_COUNT=2 yarn build
+      - save_cache:
+          key: gatsby-public-cache-{{ .Branch }}
+          paths:
+            - ./public
+      - run:
+          name: Netlify Deploy Gatsby
+          command: ./node_modules/.bin/netlify deploy --site $NETLIFY_SITE_ID_RELEASE --auth $NETLIFY_ACCESS_TOKEN --prod --dir=public
+
+workflows:
+  version: 2
+  build-deploy:
+    jobs:
+      - install-dependencies-test-lint
+      - gatsby-build-preview-deploy:
+          requires:
+            - install-dependencies-test-lint
+          filters:
+            branches:
+              ignore:
+                - develop
+                - master
+      - storybook-build-preview-deploy:
+          requires:
+            - install-dependencies-test-lint
+          filters:
+            branches:
+              ignore:
+                - develop
+                - master
+      - gatsby-build-staging-deploy:
+          requires:
+            - install-dependencies-test-lint
+          filters:
+            branches:
+              only:
+                - develop
+      - storybook-build-staging-deploy:
+          requires:
+            - install-dependencies-test-lint
+          filters:
+            branches:
+              only:
+                - develop
+      - gatsby-build-release-deploy:
+          requires:
+            - install-dependencies-test-lint
+          filters:
+            branches:
+              only:
+                - master
