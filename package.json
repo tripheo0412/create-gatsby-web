@@ -1,11 +1,11 @@
 {
-  "name": "create-gatsby-app",
+  "name": "create-gatsby-web",
   "version": "1.0.0",
   "description": "A CLI to bootstrap Gatsby app",
   "main": "src/index.js",
   "bin": {
-    "@tripheo2410/create-gatsby-app": "bin/create-gatsby-app",
-    "create-gatsby-app": "bin/create-gatsby-app"
+    "@tripheo2410/create-gatsby-web": "bin/create-gatsby-web",
+    "create-gatsby-web": "bin/create-gatsby-web"
   },
   "publishConfig": {
     "access": "public"
@@ -15,7 +15,7 @@
   },
   "keywords": [
     "cli",
-    "create-gatsby-app"
+    "create-gatsby-web"
   ],
   "author": "Tri Hoang <tripheo0412@gmail.com>",
   "license": "MIT",

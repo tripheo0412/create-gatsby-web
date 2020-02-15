@@ -1,1 +1,1 @@
-# create-gatsby-app
+# create-gatsby-web
