@@ -52,59 +52,58 @@ It will generate the the initial project structure inside the current folder.<br
 
 ## Template structure
 ```
-.
-    ├── .circleci
-    │   └── config.yml
-    ├── .storybook
-    │   ├── addons.js
-    │   ├── config.js
-    │   └── webpack.config.js
-    ├── config
-    │   └── testing
-    │       ├── setupTests.js
-    │       └── __ mocks __
-    │           ├── file-mock.js
-    │           ├── gatsby.js
-    │           └── styleMock.js
-    ├── node_modules
-    ├── src
-    │   ├── images
-    │   ├── pages
-    │   │   ├── index.jsx/tsx
-    │   │   └── your_page
-    │   |       └── index.jsx/tsx
-    │   └── components
-    │       ├── seo
-    │       │   └── index.jsx/tsx
-    │       └── < your component >
-    │           ├── index.jsx/tsx
-    │           ├── __ stories __
-    │           │   └── your_component.stories.jsx/tsx
-    │           └── __ tests __
-    │               └── your_component.test.jsx/tsx
-    ├── tasks
-    │   └── deployment
-    │       ├── gatsby-deploy-end.sh
-    │       ├── gatsby-deploy-start.sh
-    │       ├── storybook-deploy-end.sh
-    │       └── storybook-deploy-start.sh
-    ├── .eslintignore
-    ├── .eslintrc.js
-    ├── .gitignore
-    ├── .prettierignore
-    ├── .prettierrc
-    ├── gatsby-browser.js
-    ├── gatsby-config.js
-    ├── gatsby-node.js
-    ├── gatsby-ssr.js
-    ├── jest-preprocess.js
-    ├── jest.config.js
-    ├── LICENSE
-    ├── loadershim.js
-    ├── README.md
-    ├── package.json
-    ├── tsconfig.json -- only available on typescript template
-    └── yarn.lock/package-lock.json
+├── .circleci
+│   └── config.yml
+├── .storybook
+│   ├── addons.js
+│   ├── config.js
+│   └── webpack.config.js
+├── config
+│   └── testing
+│       ├── setupTests.js
+│       └── __ mocks __
+│          ├── file-mock.js
+│          ├── gatsby.js
+│          └── styleMock.js
+├── node_modules
+├── src
+│   ├── images
+│   ├── pages
+│   │   ├── index.jsx/tsx
+│   │   └── your_page
+│   |       └── index.jsx/tsx
+│   └── components
+│       ├── seo
+│       │   └── index.jsx/tsx
+│       └── < your component >
+│           ├── index.jsx/tsx
+│           ├── __ stories __
+│           │  └── your_component.stories.jsx/tsx
+│           └── __ tests __
+│              └── your_component.test.jsx/tsx
+├── tasks
+│   └── deployment
+│       ├── gatsby-deploy-end.sh
+│       ├── gatsby-deploy-start.sh
+│       ├── storybook-deploy-end.sh
+│       └── storybook-deploy-start.sh
+├── .eslintignore
+├── .eslintrc.js
+├── .gitignore
+├── .prettierignore
+├── .prettierrc
+├── gatsby-browser.js
+├── gatsby-config.js
+├── gatsby-node.js
+├── gatsby-ssr.js
+├── jest-preprocess.js
+├── jest.config.js
+├── LICENSE
+├── loadershim.js
+├── README.md
+├── package.json
+├── tsconfig.json -- only available on typescript template
+└── yarn.lock/package-lock.json
 ```
 
 All configurations are exposed and predefined folder structures, just write codes, no need to config<br>
