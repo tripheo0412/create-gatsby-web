@@ -1,6 +1,6 @@
 {
   "name": "create-gatsby-web",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A CLI to bootstrap Gatsby app",
   "main": "src/index.js",
   "bin": {
@@ -22,6 +22,14 @@
     "create-gatsby-web"
   ],
   "author": "Tri Hoang <tripheo0412@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tripheo0412/create-gatsby-web"
+  },
+  "bugs": {
+    "url": "https://github.com/tripheo0412/create-gatsby-web/issues"
+  },
+  "homepage": "https://github.com/tripheo0412/create-gatsby-web",
   "license": "MIT",
   "dependencies": {
     "arg": "^4.1.3",
