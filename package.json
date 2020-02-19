@@ -1,6 +1,6 @@
 {
   "name": "create-gatsby-web",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A CLI to bootstrap Gatsby app",
   "main": "src/index.js",
   "bin": {
