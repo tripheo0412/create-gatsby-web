@@ -51,7 +51,7 @@ _([npx](https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7
 It will generate the the initial project structure inside the current folder.<br>
 
 ## Template structure
-
+```
 .
     ├── .circleci
     │   └── config.yml
@@ -105,6 +105,7 @@ It will generate the the initial project structure inside the current folder.<br
     ├── package.json
     ├── tsconfig.json -- only available on typescript template
     └── yarn.lock/package-lock.json
+```
 
 All configurations are exposed and predefined folder structures, just write codes, no need to config<br>
 Once the installation is done, you can start develop right away!
