@@ -4,7 +4,6 @@
   "description": "A CLI to bootstrap Gatsby app",
   "main": "src/index.js",
   "bin": {
-    "@tripheo2410/create-gatsby-web": "bin/create-gatsby-web",
     "create-gatsby-web": "bin/create-gatsby-web"
   },
   "publishConfig": {
