@@ -1,4 +1,4 @@
-# Create Gatsby Web [![Node Version](https://img.shields.io/badge/Node-10.16.0-339933.svg?style=flat&logo=Node.js)]() [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=flat&logo=Read-The-Docs)](https://github.com/tripheo0412/create-gatsby-web/blob/master/LICENSE) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-green.svg)](https://github.com/tripheo0412/create-gatsby-web/blob/master/CONTRIBUTING.md)
+# Create Gatsby Web [![Node Version](https://img.shields.io/badge/Node-10.16.0-339933.svg?style=flat&logo=Node.js)]() [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=flat&logo=Read-The-Docs)](https://github.com/tripheo0412/create-gatsby-web/blob/master/LICENSE) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-green.svg)](https://github.com/tripheo0412/create-gatsby-web/blob/master/CONTRIBUTING.md) [![Greenkeeper badge](https://badges.greenkeeper.io/tripheo0412/create-gatsby-web.svg)](https://greenkeeper.io/)
 
 Create Gatsby web with pre-configuration.
 
