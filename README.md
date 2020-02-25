@@ -237,7 +237,7 @@ In-progress
 - Login to **Client** Netlify, upload the **public** folder via the image below **(DO NOT USE new site from GIT)**, after upload you should get new project deployment in Netlify, click on it and go to site settings, note down the API ID as ```NETLIFY_SITE_ID_RELEASE=<the-API-ID >```.
 
 <p align='center'>
-<img src='https://github.com/tripheo0412/create-gatsby-web/blob/master/assets/images/netlify-upload.png' width='600' alt='Netlify Upload'>
+<img src='https://raw.githubusercontent.com/tripheo0412/create-gatsby-web/master/assets/images/netlify-upload.png' width='600' alt='Netlify Upload'>
 </p>
 
 - Login to CircleCI, click on add project -> set up project -> start building -> add manually
