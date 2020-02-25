@@ -10,12 +10,10 @@ function parseArgumentsIntoOptions(rawArgs) {
       {
         "--git": Boolean,
         "--yes": Boolean,
-        "--install": Boolean,
         "--version": Boolean,
         "--help": Boolean,
         "-g": "--git",
         "-y": "--yes",
-        "-i": "--install",
         "-v": "--version",
         "-h": "--help"
       },
@@ -54,9 +52,6 @@ function parseArgumentsIntoOptions(rawArgs) {
     ${chalk.yellow("--git, -g")} .......... ${chalk.cyan(
         "initialize a git repository"
       )}
-    ${chalk.yellow("--install, -i")} ...... ${chalk.cyan(
-        "install dependencies"
-      )}
     ${chalk.yellow("--version, -v")} ...... ${chalk.cyan("check CLI version")}
     ${chalk.yellow("--yes, -y")} .......... ${chalk.cyan(
         "init project with default options: Javascript, no git, no install dependencies"
@@ -72,8 +67,8 @@ function parseArgumentsIntoOptions(rawArgs) {
       skipPrompts: args["--yes"] || false,
       git: args["--git"] || false,
       template: false,
-      runInstall: args["--install"] || false,
-      targetDirectory: args._[0] || "my-gatsby-web"
+      targetDirectory: args._[0] || "my-gatsby-web",
+      packageManager: 'npm'
     };
   } catch (err) {
     if (err.code === "ARG_UNKNOWN_OPTION") {
@@ -91,7 +86,6 @@ async function promptForMissingOptions(options) {
       throw options.err;
     }
     const defaultTemplate = "JavaScript";
-    const dafaultPackageManager = "yarn";
     if (options.skipPrompts) {
       return {
         ...options,
@@ -119,22 +113,28 @@ async function promptForMissingOptions(options) {
       });
     }
 
-    if (options.runInstall) {
-      questions.push({
-        type: "list",
-        name: "packageManager",
-        message: "Please choose your prefer package manager",
-        choices: ["yarn", "npm"],
-        default: dafaultPackageManager
-      });
-    }
+    questions.push({
+      type: "list",
+      name: "packageManager",
+      message: "Please choose your prefer package manager",
+      choices: ["yarn", "npm"],
+      default: options.packageManager
+    });
+
+    questions.push({
+      type: "confirm",
+      name: "runInstall",
+      message: `Automatically install dependencies? ${chalk.yellow('(May take up to 3 minutes)')}`,
+      default: false
+    });
 
     const answers = await inquirer.prompt(questions);
     return {
       ...options,
       template: options.template || answers.template,
       git: options.git || answers.git,
-      pacakgeManager: answers.packageManager
+      runInstall: answers.runInstall,
+      packageManager: answers.packageManager
     };
   } catch (err) {
     console.error(`%s ${err}`, chalk.red.bold("ERROR"));
@@ -148,9 +148,6 @@ async function promptForMissingOptions(options) {
     )}
     ${chalk.yellow("--git, -g")} .......... ${chalk.cyan(
       "initialize a git repository"
-    )}
-    ${chalk.yellow("--install, -i")} ...... ${chalk.cyan(
-      "install dependencies"
     )}
     ${chalk.yellow("--version, -v")} ...... ${chalk.cyan("check CLI version")}
     ${chalk.yellow("--yes, -y")} .......... ${chalk.cyan(

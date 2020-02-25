@@ -15,6 +15,12 @@ async function copyTemplateFiles(options) {
   });
 }
 
+async function copyLockFile(options) {
+  return copy(options.lockDirectory, options.targetDirectory, {
+    clobber: false
+  });
+}
+
 async function initGit(options) {
   const result = await execa("git", ["init"], {
     cwd: options.targetDirectory
@@ -35,9 +41,27 @@ export async function createGatsbyWeb(options) {
   const templateDir = path.resolve(
     new URL(currentFileUrl).pathname,
     "../../templates",
-    options.template.toLowerCase()
+    options.template.toLowerCase(),
+    "src"
   );
+  let lockDir
+  if (options.packageManager === 'yarn'){
+    lockDir = path.resolve(
+      new URL(currentFileUrl).pathname,
+      "../../templates",
+      options.template.toLowerCase(),
+      "yarn"
+    );
+  } else {
+    lockDir = path.resolve(
+      new URL(currentFileUrl).pathname,
+      "../../templates",
+      options.template.toLowerCase(),
+      "npm"
+    );
+  }
   options.templateDirectory = templateDir;
+  options.lockDirectory =  lockDir;
 
   try {
     await access(templateDir, fs.constants.R_OK);
@@ -50,6 +74,10 @@ export async function createGatsbyWeb(options) {
     {
       title: "Copy project files",
       task: () => copyTemplateFiles(options)
+    },
+    {
+      title: "Copy lock file",
+      task: () => copyLockFile(options)
     },
     {
       title: "Initialize git",
@@ -65,7 +93,7 @@ export async function createGatsbyWeb(options) {
         }),
       skip: () =>
         !options.runInstall
-          ? "Pass --install to automatically install dependencies"
+          ? "Choose y to automatically install dependencies"
           : undefined
     }
   ]);

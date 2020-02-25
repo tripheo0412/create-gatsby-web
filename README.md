@@ -13,7 +13,7 @@ If you have questions or need help, please email me at [hoangtri241097@gmail.com
 ## Quick Overview
 
 ```sh
-npx create-gatsby-web --install
+npx create-gatsby-web
 npm run develop/ yarn develop
 ```
 If you've previously installed `create-gatsby-web` globally via `npm install -g create-gatsby-web`, we recommend you uninstall the package using `npm uninstall -g create-gatsby-web` to ensure that npx always uses the latest version.
@@ -22,7 +22,7 @@ _([npx](https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7
 
 Your site is now running at `http://localhost:8000`!
 
-    _Note: You'll also see a second link: _`http://localhost:8000/___graphql`_. This is a tool you can use to experiment with querying your data. Learn more about using this tool in the [Gatsby tutorial](https://www.gatsbyjs.org/tutorial/part-five/#introducing-graphiql)._<br>
+_Note: You'll also see a second link: _`http://localhost:8000/___graphql`_. This is a tool you can use to experiment with querying your data. Learn more about using this tool in the [Gatsby tutorial](https://www.gatsbyjs.org/tutorial/part-five/#introducing-graphiql)._<br>
 When you’re ready to deploy to production, create a minified bundle with `npm run build/ yarn build`.
 
 <!-- to do add gif how to use -->
@@ -85,7 +85,7 @@ It will generate the the initial project structure inside the current folder.<br
 │   ├── pages
 │   │   ├── index.jsx/tsx
 │   │   └── your_page
-│   |       └── index.jsx/tsx
+│   │       └── index.jsx/tsx
 │   └── components
 │       ├── seo
 │       │   └── index.jsx/tsx
@@ -180,14 +180,11 @@ Inside the newly created project, you can run some built-in commands:
 Runs the app in development mode.<br>
 Your site is now running at `http://localhost:8000`!
 
-    _Note: You'll also see a second link: _`http://localhost:8000/___graphql`_. This is a tool you can use to experiment with querying your data. Learn more about using this tool in the [Gatsby tutorial](https://www.gatsbyjs.org/tutorial/part-five/#introducing-graphiql)._
+_Note: You'll also see a second link: _`http://localhost:8000/___graphql`_. This is a tool you can use to experiment with querying your data. Learn more about using this tool in the [Gatsby tutorial](https://www.gatsbyjs.org/tutorial/part-five/#introducing-graphiql)._
 
 The page will automatically reload if you make changes to the code.<br>
 You will see the build errors and lint warnings in the console.
 
-<!-- <p align='center'>
-<img src='https://cdn.jsdelivr.net/gh/marionebl/create-react-app@9f6282671c54f0874afd37a72f6689727b562498/screencast-error.svg' width='600' alt='Build errors'>
-</p> -->
 ### `npm run build` or `yarn build`
 
 Builds the app for production to the `public` folder.<br>
@@ -287,6 +284,7 @@ CONTENTFUL_ACCESS_TOKEN=<the-Content-Delivery-API-access token>
 - Login to CircleCI, main dashboard -> jobs -> click on the setting of your project -> environment variable -> add variable. Then add your CONTENTFUL_SPACE_ID and CONTENTFUL_ACCESS_TOKEN.
 
 2. **Setup webhook**
+
 __Webhook for staging website__
 - Login to Contentful, settings -> webhooks -> add webhooks
 - Details -> name ```Trigger CircleCi Build Develop Branch```
@@ -359,7 +357,6 @@ We'd love to have your helping hand on `create-gatsby-web`! See [CONTRIBUTING.md
 ## Credits
 
 This project exists thanks to all the people who [contribute](CONTRIBUTING.md).<br>
-<!-- <a href="https://github.com/tripheo0412/create-gatsby-web/graphs/contributors"><img src="https://opencollective.com/create-react-app/contributors.svg?width=890&button=false" /></a> -->
 
 ## License
 
