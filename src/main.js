@@ -60,6 +60,7 @@ export async function createGatsbyWeb(options) {
       title: "Install dependencies",
       task: () =>
         projectInstall({
+          prefer: options.packageManager,
           cwd: options.targetDirectory
         }),
       skip: () =>
