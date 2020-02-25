@@ -1,6 +1,6 @@
 # Create Gatsby Web [![Node Version](https://img.shields.io/badge/Node-10.16.0-339933.svg?style=flat&logo=Node.js)]() [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=flat&logo=Read-The-Docs)](https://github.com/tripheo0412/create-gatsby-web/blob/master/LICENSE) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-green.svg)](https://github.com/tripheo0412/create-gatsby-web/blob/master/CONTRIBUTING.md)
 
-Bootstrap a Gatsby Web with pre configured development utilities, ready support for CI/CD pipeline and CMS.
+Bootstrap a Gatsby Web with pre configured development utilities, SEO optimized, ready support for CI/CD pipeline and CMS.
 
 - [Creating a Gatsby Web](#creating-a-gatsby-web) – How to create a new Gatsby web.
 - [Connecting CI/CD](#setup-ci-cd) - How to get CI/CD up and running.
@@ -13,7 +13,7 @@ If you have questions or need help, please email me at [hoangtri241097@gmail.com
 ## Quick Overview
 
 ```sh
-npx create-gatsby-web --install
+npx create-gatsby-web
 npm run develop/ yarn develop
 ```
 If you've previously installed `create-gatsby-web` globally via `npm install -g create-gatsby-web`, we recommend you uninstall the package using `npm uninstall -g create-gatsby-web` to ensure that npx always uses the latest version.
@@ -185,9 +185,6 @@ _Note: You'll also see a second link: _`http://localhost:8000/___graphql`_. This
 The page will automatically reload if you make changes to the code.<br>
 You will see the build errors and lint warnings in the console.
 
-<!-- <p align='center'>
-<img src='https://cdn.jsdelivr.net/gh/marionebl/create-react-app@9f6282671c54f0874afd37a72f6689727b562498/screencast-error.svg' width='600' alt='Build errors'>
-</p> -->
 ### `npm run build` or `yarn build`
 
 Builds the app for production to the `public` folder.<br>
@@ -360,7 +357,6 @@ We'd love to have your helping hand on `create-gatsby-web`! See [CONTRIBUTING.md
 ## Credits
 
 This project exists thanks to all the people who [contribute](CONTRIBUTING.md).<br>
-<!-- <a href="https://github.com/tripheo0412/create-gatsby-web/graphs/contributors"><img src="https://opencollective.com/create-react-app/contributors.svg?width=890&button=false" /></a> -->
 
 ## License
 
