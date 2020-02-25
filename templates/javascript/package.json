@@ -5,6 +5,7 @@
   "version": "1.0.0",
   "author": "Tri Hoang <tripheo0412@gmail.com>",
   "dependencies": {
+    "cross-env": "6.0.0",
     "gatsby": "^2.19.7",
     "gatsby-image": "^2.2.41",
     "gatsby-plugin-manifest": "^2.2.41",
@@ -38,14 +39,16 @@
     "babel-loader": "^8.0.6",
     "babel-preset-gatsby": "^0.2.29",
     "core-js": "^3.6.4",
-    "cross-env": "^7.0.0",
     "css-loader": "^3.4.2",
     "eslint": "^6.8.0",
     "eslint-config-prettier": "^6.10.0",
     "eslint-plugin-prettier": "^3.1.2",
+    "gatsby-plugin-less": "^3.0.19",
+    "gatsby-plugin-sass": "^2.1.29",
     "husky": "^4.2.3",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^25.1.0",
+    "less": "^3.11.1",
     "lint-staged": "^10.0.7",
     "netlify-cli": "^2.32.0",
     "node-sass": "^4.13.1",
@@ -93,12 +96,5 @@
       "yarn format",
       "git add"
     ]
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/tripheo0412/jamstack-javascript-boilerplate"
-  },
-  "bugs": {
-    "url": "https://github.com/tripheo0412/jamstack-javascript-boilerplate/issues"
   }
 }

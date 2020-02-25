@@ -6,6 +6,15 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
+    /***** REMOVE COMMENT TO ENABLE CONTENTFUL CMS
+		{
+			resolve: `gatsby-source-contentful`,
+			options: {
+				spaceId: process.env.CONTENTFUL_SPACE_ID,
+				accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+			},
+		},
+		******/
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -13,6 +22,8 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
+    `gatsby-plugin-sass`,
+    `gatsby-plugin-less`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
