@@ -3,7 +3,7 @@
 Bootstrap a Gatsby Web with pre configured development utilities, ready support for CI/CD pipeline and CMS.
 
 - [Creating a Gatsby Web](#creating-a-gatsby-web) – How to create a new Gatsby web.
-- [Connecting CI/CD](#setup-ci/cd) - How to get CI/CD up and running.
+- [Connecting CI/CD](#setup-ci-cd) - How to get CI/CD up and running.
 - [Setup CMS webhook](#setup-cms-webhook) - How to set webhook from CMS to CircleCI pipeline.
 
 Create Gatsby Web works on macOS, Windows, and Linux.<br>
@@ -65,61 +65,62 @@ _([npx](https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7
 It will generate the the initial project structure inside the current folder.<br>
 
 ## Template structure
-    .
-    ├── .circleci
-    │   └── config.yml
-    ├── .storybook
-    │   ├── addons.js
-    │   ├── config.js
-    │   └── webpack.config.js
-    ├── config
-    │   └── testing
-    │       ├── setupTests.js
-    │       └── __ mocks __
-    │          ├── file-mock.js
-    │          ├── gatsby.js
-    │          └── styleMock.js
-    ├── node_modules
-    ├── src
-    │   ├── images
-    │   ├── pages
-    │   │   ├── index.jsx/tsx
-    │   │   └── your_page
-    │   |       └── index.jsx/tsx
-    │   └── components
-    │       ├── seo
-    │       │   └── index.jsx/tsx
-    │       └── < your component >
-    │           ├── index.jsx/tsx
-    │           ├── __ stories __
-    │           │  └── your_component.stories.jsx/tsx
-    │           └── __ tests __
-    │              └── your_component.test.jsx/tsx
-    ├── tasks
-    │   └── deployment
-    │       ├── gatsby-deploy-end.sh
-    │       ├── gatsby-deploy-start.sh
-    │       ├── storybook-deploy-end.sh
-    │       └── storybook-deploy-start.sh
-    ├── .eslintignore
-    ├── .eslintrc.js
-    ├── .gitignore
-    ├── .huskyrc.json
-    ├── .lintstagedrc.json
-    ├── .prettierignore
-    ├── .prettierrc
-    ├── gatsby-browser.js
-    ├── gatsby-config.js
-    ├── gatsby-node.js
-    ├── gatsby-ssr.js
-    ├── jest-preprocess.js
-    ├── jest.config.js
-    ├── LICENSE
-    ├── loadershim.js
-    ├── README.md
-    ├── package.json
-    ├── tsconfig.json -- only available on typescript template
-    └── yarn.lock/package-lock.json
+```
+├── .circleci
+│   └── config.yml
+├── .storybook
+│   ├── addons.js
+│   ├── config.js
+│   └── webpack.config.js
+├── config
+│   └── testing
+│       ├── setupTests.js
+│       └── __ mocks __
+│          ├── file-mock.js
+│          ├── gatsby.js
+│          └── styleMock.js
+├── node_modules
+├── src
+│   ├── images
+│   ├── pages
+│   │   ├── index.jsx/tsx
+│   │   └── your_page
+│   |       └── index.jsx/tsx
+│   └── components
+│       ├── seo
+│       │   └── index.jsx/tsx
+│       └── < your component >
+│           ├── index.jsx/tsx
+│           ├── __ stories __
+│           │  └── your_component.stories.jsx/tsx
+│           └── __ tests __
+│              └── your_component.test.jsx/tsx
+├── tasks
+│   └── deployment
+│       ├── gatsby-deploy-end.sh
+│       ├── gatsby-deploy-start.sh
+│       ├── storybook-deploy-end.sh
+│       └── storybook-deploy-start.sh
+├── .eslintignore
+├── .eslintrc.js
+├── .gitignore
+├── .huskyrc.json
+├── .lintstagedrc.json
+├── .prettierignore
+├── .prettierrc
+├── gatsby-browser.js
+├── gatsby-config.js
+├── gatsby-node.js
+├── gatsby-ssr.js
+├── jest-preprocess.js
+├── jest.config.js
+├── LICENSE
+├── loadershim.js
+├── README.md
+├── package.json
+├── tsconfig.json -- only available on typescript template
+└── yarn.lock/package-lock.json
+```
 
 1.  **`./circleci`**: This directory contains CircleCI configuration file. Note that there are 4 type of jobs: preview-staging-release-webhook
 
@@ -216,7 +217,7 @@ Runs the test watcher in an interactive mode.<br>
 <img src='https://lh3.googleusercontent.com/fJ7l7kpY2GHK9gGkRq94FwbPB3KTwun6nxy7DE6EQ9b3kXgUvEbLhONS-z5RkDZ8ihDp8Sz8ejsS14Q4sv7-B25Oql3IjeSlIWSLkyAviRu23WWeMSVtJWd-bhqPjgNpO8NkWmN0kmnKPOvYMwZSFUDBWsEw0GSmxh1WLhUlc7FbRMKb8Utzl4L5ZZxNQURBtNMrjTjxqtfxJLFtl96Dhfj4yMjj7T-tinPgAPMKJ9SGE_eh0lN_3lezFQD0Wp8t0dbdTodvzxBTEDK9Jk04OVuiM9BWMi3rWeMALfL3rsnzIMCKhvq5nOS4QPSonX1vssq69u74JgMm7G-yU1tB5B_sotuJbznnBobmlkWec4opmSUH7Fgw4MIODVr4sIC5JX_gEYet-El5IHHxWaHExj7hDuyB4jkFCwFN-JrOWW_H5s0Eqaz0H8KcxyZ8H1umcCm9mEykW3JvoBzigidSTWMYMX5OsA_3b6FuCT4uU39rQghH_VgcJbtD2NRpLfuJqzVqY6QEGukJq7FX1u3Eqlhqa8l7f1Vc6fjX86u9eMFoG4IuHmQfCkQ_Di71w2MNp66IgTxAPMYE38KJEVlWBSiOwT7aQWCZbARHpjKLrdFInJSh-yQ9PyWCLbiswJNuGD7WN-oQ7db4PRj49lVdyFaKXGZAk4hURiVZlw7qlBI23EvZBOjBtqbOHWGpocrbGsTmascfpZGIaeue24San5ZZgTEFdw24Lgg6duYniCzKJRnB=w731-h374-no' width='600' alt='Help Menu'>
 </p>
 
-### Setup CI/CD
+### Setup CI CD
 **Video tutorial**
 In-progress
 

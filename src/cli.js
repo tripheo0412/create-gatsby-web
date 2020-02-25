@@ -23,6 +23,7 @@ function parseArgumentsIntoOptions(rawArgs) {
         argv: rawArgs.slice(2)
       }
     );
+    console.log(args._[0])
     if (args._.length == 0) {
       console.log(
         chalk.yellow(
@@ -35,18 +36,13 @@ function parseArgumentsIntoOptions(rawArgs) {
         chalk.red.bold("ERROR")
       );
       process.exit(1);
-    } else if (
-      !/^(?:@[a-z0-9-*~][a-z0-9-*._~]*\/)?[a-z0-9-~][a-z0-9-._~]*$/.test(
-        args._[0]
-      )
-    ) {
-      console.error(
-        `%s Project name only accept ${chalk.yellow("a-z, 0-9, - * . _ ~")}`,
+    } 
+    else if (!(/^(?:@[a-z0-9-*~][a-z0-9-*._~]*\/)?[a-z0-9-~][a-z0-9-._~]*$/.test(args._[0]))) {
+      console.error(`%s Project name only accept ${chalk.yellow("a-z, 0-9, - * . _ ~")}`,
         chalk.red.bold("ERROR")
       );
       process.exit(1);
     }
-
     if (args["--help"]) {
       console.log(`
     ${chalk.green("create-gatsby-web")} <project_name>${chalk.yellow(
@@ -76,7 +72,7 @@ function parseArgumentsIntoOptions(rawArgs) {
     return {
       skipPrompts: args["--yes"] || false,
       git: args["--git"] || false,
-      template: args._[0],
+      template: false,
       runInstall: args["--install"] || false,
       targetDirectory: args._[0] || "my-gatsby-web"
     };
