@@ -23,7 +23,6 @@ function parseArgumentsIntoOptions(rawArgs) {
         argv: rawArgs.slice(2)
       }
     );
-    console.log(args._[0])
     if (args._.length == 0) {
       console.log(
         chalk.yellow(
