@@ -214,7 +214,7 @@ Runs the test watcher in an interactive mode.<br>
 
 ### CLI 
 <p align='center'>
-<img src='https://lh3.googleusercontent.com/fJ7l7kpY2GHK9gGkRq94FwbPB3KTwun6nxy7DE6EQ9b3kXgUvEbLhONS-z5RkDZ8ihDp8Sz8ejsS14Q4sv7-B25Oql3IjeSlIWSLkyAviRu23WWeMSVtJWd-bhqPjgNpO8NkWmN0kmnKPOvYMwZSFUDBWsEw0GSmxh1WLhUlc7FbRMKb8Utzl4L5ZZxNQURBtNMrjTjxqtfxJLFtl96Dhfj4yMjj7T-tinPgAPMKJ9SGE_eh0lN_3lezFQD0Wp8t0dbdTodvzxBTEDK9Jk04OVuiM9BWMi3rWeMALfL3rsnzIMCKhvq5nOS4QPSonX1vssq69u74JgMm7G-yU1tB5B_sotuJbznnBobmlkWec4opmSUH7Fgw4MIODVr4sIC5JX_gEYet-El5IHHxWaHExj7hDuyB4jkFCwFN-JrOWW_H5s0Eqaz0H8KcxyZ8H1umcCm9mEykW3JvoBzigidSTWMYMX5OsA_3b6FuCT4uU39rQghH_VgcJbtD2NRpLfuJqzVqY6QEGukJq7FX1u3Eqlhqa8l7f1Vc6fjX86u9eMFoG4IuHmQfCkQ_Di71w2MNp66IgTxAPMYE38KJEVlWBSiOwT7aQWCZbARHpjKLrdFInJSh-yQ9PyWCLbiswJNuGD7WN-oQ7db4PRj49lVdyFaKXGZAk4hURiVZlw7qlBI23EvZBOjBtqbOHWGpocrbGsTmascfpZGIaeue24San5ZZgTEFdw24Lgg6duYniCzKJRnB=w731-h374-no' width='600' alt='Help Menu'>
+<img src='https://raw.githubusercontent.com/tripheo0412/create-gatsby-web/master/assets/images/help-menu.png' width='600' alt='Help Menu'>
 </p>
 
 ### Setup CI CD
@@ -237,14 +237,14 @@ In-progress
 - Login to **Client** Netlify, upload the **public** folder via the image below **(DO NOT USE new site from GIT)**, after upload you should get new project deployment in Netlify, click on it and go to site settings, note down the API ID as ```NETLIFY_SITE_ID_RELEASE=<the-API-ID >```.
 
 <p align='center'>
-<img src='https://lh3.googleusercontent.com/5RmFw_73xtVA1fLCWyXR9UVjfXQUjkGfoCbhVjeLxpJ7JDFSdTodLFDbU0dTURmQS8WL1ZA1QC-9tI-cp3hc0wsSxhMWlSeCZkCiRs9AOOkISLnQ7GVjAQzJSoCe1c5cUnwSDYLa3OYYlZ0D559ys9AZ9SBh_3NjlxZkWUoigidL2jGw92GBUNfpSQMvHI56SUyBqPdEoyOin9-aJNQ-gK80BhNpRFDn1gsNMqQ3ezYVW8p-zSo850g3eb7vUh4eLPo5S9yyawivDU96QUhZbZo2WeCzVgcqhsKWB6cSJ_AP1oLqcNUROWHfPw2p_kTGNxwRWGA4Igv1BE5wMTfUlcUOyuH5CqXGT0AelSeddwe6QPxZewhw3lOa4RsAptCs1PHoOavSr8beiupHKieqIK8SUPERKHfU-RiM-2aWJk_UzVwKkGUd3M2LlAMBNDCUTMPbfldkc53i4hsB_etJR90dRwOMyGr7TbdM020wGnJCo-9cNKxKgIGPGtG7gukSdzYJXxN4yl1p4-2H0MBFFcNvSLdFFviaSoNSjI5J-5npgddDXe9ENBB-KwiWB0Gax2f67T0i6CbqTUw_Ob_q1lh2IEqAFRMSVchPNYkhmHbxhrDOdz-cBWi3hkgxPdQlBfyZKzhaR5VhHeQ7BA5ppf2U-JNhCIDdTVUGiTMUWbxwrBsh2dV1Vgk=w487-h175-no' alt='Netlify Upload'>
+<img src='https://github.com/tripheo0412/create-gatsby-web/blob/master/assets/images/netlify-upload.png' alt='Netlify Upload'>
 </p>
 
 - Login to CircleCI, click on add project -> set up project -> start building -> add manually
 - Go back to the main dashboard -> jobs -> click on the setting of your project -> environment variable -> add variable. Then add all the 6 ENV that we just got. After this, you should get somethign like this:
 
 <p align='center'>
-<img src='https://lh3.googleusercontent.com/0hsBZ58V7T9s3fVYuWghNv-0jFP0e4a2iW9FdJpRqg2PbOPNslrcOav6iuD4OiGENG7utsgUF1GZ6TbbB3UmlsMFkbRAHaMiVwUnbV6MvN-I1OjUX8-V3NRsaM4ZTQzPI9EEQVkZ0T8BsFiUn1-7jR1mM4r9PaCf_E2Xp-ogXJ7wRAHOgV2uB77z4ZhfgueXymiMpBr0cC6CQyxmOGMo2bA-2ra3eM05cwKpxsv4ziz-TemD1-aqZB3q1en_ZP1f37AM6wG4ZWR9FgKRuRVy4m7OWYueApQQGkFe6_fmmlqexMaXedLFt5iZjIgDt2-KAuLKFSdqjywZmFkHJ-dxRI1CnfEzhZg8XYF_NNnmU3L7fH0ocu4rPp1aP8GFA8TYBI_Z5eZz531Zz4XKoYk8BlljgCCatpFL8era615c0jG6pAZ_i-8TbCTXcmynCv4tWHAhQYJC9jfuzInLNeDaTn2cWjX8ndDvuPgSZdDbDLz-ocwYuyPwO4lEdney0EoeD2Kbv-47Hso9FkdULQpp5Q_6FbOLS-lw4coelEJm_f9-s22GT5QSkxcAnQy6LcDDDpjYWgH0eLL0SdpZDKBHo0JCGO3meLIAffC8lA5KWxOCFPDHfqwI9ZaLOjcOrFIAVRAuaa-LlViEe3a6D7s2tyN3zeB_enIvwFMs6Q1-9vWseCG8_77f2IM=w1092-h224-no' width='600' alt='CircleCI ENV'>
+<img src='https://raw.githubusercontent.com/tripheo0412/create-gatsby-web/master/assets/images/circleci-env.png' width='600' alt='CircleCI ENV'>
 </p>
 
 - Voila! Pat your back because you have done a great job 👏
