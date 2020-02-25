@@ -32,7 +32,14 @@ When you’re ready to deploy to production, create a minified bundle with `npm 
 You **don’t** need to install or configure tools.<br>
 They are preconfigured so that you can focus on the code. However, all configuration files are exposed so you can custom them whenever you need.
 
-Create a project, and you’re good to go.
+Create a project, and you’re good to go!
+
+### CI/CD pipeline support out-of-the-box
+
+You **just** need to sign up for services, get access tokens and connect your services and the rest is handle my create-gatsby-web<br>
+Integrated with scripts to provide real **develop-staging-production** experience.
+
+Learn more [here](#user-guide)
 
 ## Creating a Gatsby Web
 
@@ -90,6 +97,8 @@ It will generate the the initial project structure inside the current folder.<br
 ├── .eslintignore
 ├── .eslintrc.js
 ├── .gitignore
+├── .huskyrc.json
+├── .lintstagedrc.json
 ├── .prettierignore
 ├── .prettierrc
 ├── gatsby-browser.js

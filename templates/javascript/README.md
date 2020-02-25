@@ -2,13 +2,6 @@
 [![React Version](https://img.shields.io/badge/React-16.12.0-61DAFB.svg?style=flat&logo=React)]()
 [![Gatsby Version](https://img.shields.io/badge/Gatsby-2.19.17-663399.svg?style=flat&logo=Gatsby)]()
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=flat&logo=Read-The-Docs)](https://opensource.org/licenses/MIT)<br/>
-[![Netlify Status](https://api.netlify.com/api/v1/badges/9bae6763-56e4-4610-8ad8-eab880fe1a65/deploy-status)](https://app.netlify.com/sites/jamstack-javascript-boilerplate/deploys)
-[Master Branch Live Preview](https://jamstack-javascript-boilerplate.netlify.com/)<br/>
-[![Netlify Status](https://api.netlify.com/api/v1/badges/7f5b9137-4d5a-4dbe-bac4-9d3162551422/deploy-status)](https://app.netlify.com/sites/jamstack-javascript-boilerplate-develop/deploys)
-[Develop Branch Live Preview](https://jamstack-javascript-boilerplate-develop.netlify.com/)<br/>
-[![Netlify Status](https://api.netlify.com/api/v1/badges/050bee0f-c9ca-4ac0-a982-0c6946c14605/deploy-status)](https://app.netlify.com/sites/jamstack-javascript-boilerplate-storybook/deploys)
-[Storybook Documentation](https://jamstack-javascript-boilerplate-storybook.netlify.com/)<br/>
-[![CircleCI](https://circleci.com/gh/tripheo0412/jamstack-javascript-boilerplate.svg?style=svg)](https://circleci.com/gh/tripheo0412/jamstack-javascript-boilerplate) [Test status](https://circleci.com/gh/tripheo0412/jamstack-javascript-boilerplate)<br/>
 
 <p align="center">
   <a href="https://reactjs.org/">

@@ -23,9 +23,35 @@ function parseArgumentsIntoOptions(rawArgs) {
         argv: rawArgs.slice(2)
       }
     );
+    if (args._.length == 0) {
+      console.log(
+        chalk.yellow(
+          `Using default ${chalk.green("my-gatsby-web")} as project name`
+        )
+      );
+    } else if (args._.length > 1) {
+      console.error(
+        "%s Project name contain no [space], please use [-] instead!",
+        chalk.red.bold("ERROR")
+      );
+      process.exit(1);
+    } else if (
+      !/^(?:@[a-z0-9-*~][a-z0-9-*._~]*\/)?[a-z0-9-~][a-z0-9-._~]*$/.test(
+        args._[0]
+      )
+    ) {
+      console.error(
+        `%s Project name only accept ${chalk.yellow("a-z, 0-9, - * . _ ~")}`,
+        chalk.red.bold("ERROR")
+      );
+      process.exit(1);
+    }
+
     if (args["--help"]) {
       console.log(`
-    ${chalk.green("create-gatsby-web")}${chalk.yellow(" <options>")} 
+    ${chalk.green("create-gatsby-web")} <project_name>${chalk.yellow(
+        " <options>"
+      )} 
 
     ${chalk.yellow("--help, -h")} ......... ${chalk.cyan(
         "show help menu for command"
@@ -51,7 +77,8 @@ function parseArgumentsIntoOptions(rawArgs) {
       skipPrompts: args["--yes"] || false,
       git: args["--git"] || false,
       template: args._[0],
-      runInstall: args["--install"] || false
+      runInstall: args["--install"] || false,
+      targetDirectory: args._[0] || "my-gatsby-web"
     };
   } catch (err) {
     if (err.code === "ARG_UNKNOWN_OPTION") {
@@ -115,9 +142,11 @@ async function promptForMissingOptions(options) {
       pacakgeManager: answers.packageManager
     };
   } catch (err) {
-    console.log(chalk.red(err));
+    console.error(`%s ${err}`, chalk.red.bold("ERROR"));
     console.log(`
-    ${chalk.green("create-gatsby-web")}${chalk.yellow(" <options>")} 
+    ${chalk.green("create-gatsby-web")} <project_name>${chalk.yellow(
+      " <options>"
+    )} 
 
     ${chalk.yellow("--help, -h")} ......... ${chalk.cyan(
       "show help menu for command"
