@@ -4,10 +4,10 @@ parameters:
   trigger:
     type: boolean
     default: true
-  contentful-develop:
+  cms-develop:
     type: boolean
     default: false
-  contentful-master:
+  cms-master:
     type: boolean
     default: false
 
@@ -30,9 +30,6 @@ jobs:
       - run:
           name: Install Dependencies
           command: yarn install && npm rebuild
-      - run:
-          name: Types Checking
-          command: yarn types-check
       - run:
           name: Check lint error
           command: yarn lint
@@ -100,7 +97,7 @@ jobs:
           name: Add GitHub Storybook Deployment error status
           command: ./tasks/deployment/storybook-deploy-end.sh error
           when: on_fail
-  contentful-gatsby-build-staging-deploy:
+  cms-gatsby-build-staging-deploy:
     executor: node-executor
     steps:
       - checkout
@@ -194,7 +191,7 @@ jobs:
           name: Netlify Deploy Storybook
           command: ./node_modules/.bin/netlify deploy --site $NETLIFY_SITE_ID_STORYBOOK --auth $NETLIFY_ACCESS_TOKEN --prod --dir=build-storybook
 
-  contentful-gatsby-build-release-deploy:
+  cms-gatsby-build-release-deploy:
     executor: node-executor
     steps:
       - checkout
@@ -283,11 +280,11 @@ workflows:
               only:
                 - master
 
-  contentful-webhook-develop:
-    when: << pipeline.parameters.contentful-develop >>
+  cms-webhook-develop:
+    when: << pipeline.parameters.cms-develop >>
     jobs:
-      - contentful-gatsby-build-staging-deploy
-  contentful-webhook-master:
-    when: << pipeline.parameters.contentful-master >>
+      - cms-gatsby-build-staging-deploy
+  cms-webhook-master:
+    when: << pipeline.parameters.cms-master >>
     jobs:
-      - contentful-gatsby-build-release-deploy
+      - cms-gatsby-build-release-deploy
