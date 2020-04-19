@@ -2,7 +2,10 @@ module.exports = {
   siteMetadata: {
     title: `jamstack-javascript-boilerplate`,
     description: `jamstack-javascript-boilerplate`,
-    author: `@gatsbyjs`,
+    author: `@tripheo0412`,
+    type: process.env.GATSBY_ACTIVE_ENV || 'staging',
+    siteUrl: `https://www.your-app-domain.netlify.app/`,
+    hostname: `your-app-domain.netlify.app`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -14,7 +17,13 @@ module.exports = {
 				accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
 			},
 		},
-		******/
+    ******/
+    {
+      resolve: `gatsby-plugin-canonical-urls`,
+      options: {
+        siteUrl: `https://www.your-app-domain.netlify.app/`,
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -24,8 +33,14 @@ module.exports = {
     },
     `gatsby-plugin-sass`,
     `gatsby-plugin-less`,
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
+    {
+      resolve: 'gatsby-plugin-i18n',
+      options: {
+        langKeyDefault: 'en',
+        useLangKeyLayout: false,
+        prefixDefault: false,
+      },
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -38,8 +53,9 @@ module.exports = {
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
+    `gatsby-plugin-sitemap`,
+    `gatsby-plugin-offline`,
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
   ],
 }

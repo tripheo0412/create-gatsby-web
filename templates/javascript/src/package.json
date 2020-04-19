@@ -8,10 +8,13 @@
     "cross-env": "6.0.0",
     "gatsby": "^2.19.7",
     "gatsby-image": "^2.2.41",
+    "gatsby-plugin-canonical-urls": "^2.2.3",
+    "gatsby-plugin-i18n": "^1.0.1",
     "gatsby-plugin-manifest": "^2.2.41",
     "gatsby-plugin-offline": "^3.0.34",
     "gatsby-plugin-react-helmet": "^3.1.22",
     "gatsby-plugin-sharp": "^2.4.5",
+    "gatsby-plugin-sitemap": "^2.3.4",
     "gatsby-source-filesystem": "^2.1.48",
     "gatsby-transformer-sharp": "^2.3.14",
     "graphql": "^14.6.0",
@@ -24,6 +27,7 @@
     "@babel/core": "^7.8.4",
     "@babel/preset-env": "^7.8.4",
     "@babel/preset-react": "^7.8.3",
+    "@lhci/cli": "^0.3.12",
     "@storybook/addon-a11y": "^5.3.13",
     "@storybook/addon-docs": "^5.3.13",
     "@storybook/addon-info": "^5.3.13",
@@ -83,18 +87,15 @@
     "ci-test": "cross-env NODE_ENV=test jest -u -w 2",
     "test:watch": "cross-env NODE_ENV=test jest --watchAll",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook -o build-storybook"
+    "build-storybook": "build-storybook -o build-storybook",
+    "lhci:run": "lhci autorun",
+    "lhci:upload": "lhci upload"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged & yarn test"
-    }
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tripheo0412/jamstack-javascript-boilerplate"
   },
-  "lint-staged": {
-    "src/*.{js, jsx}": "yarn lint",
-    "**/*.+(js|jsx|json|ts|tsx|css|scss|md|mdx|graphql)": [
-      "yarn format",
-      "git add"
-    ]
+  "bugs": {
+    "url": "https://github.com/tripheo0412/jamstack-javascript-boilerplate/issues"
   }
 }
