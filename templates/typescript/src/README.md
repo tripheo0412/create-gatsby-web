@@ -228,6 +228,7 @@ In-progress
 
 **How to**
 - Upload project to Github's repo, if you want to use CircleCI for free, Github's repo must be **public**.
+- Install LighthouseCI via this [LINK](https://github.com/apps/lighthouse-ci), let LighthouseCI access your project repo, note down the TOKEN provided on the authorization confirmation page as ```LHCI_GITHUB_APP_TOKEN=<the-TOKEN>```.
 - Run ```yarn build/ npm run build```, you will get Gatsby built **public** folder in the root directory.
 - Run ```yarn build-storybook/ npm run build-storybook```, you will get Storybook built **build-storybook** folder in the root directory.
 - Login to **Dev team** Netlify, upload the **public** folder via the image below **(DO NOT USE new site from GIT)**, after upload you should get new project deployment in Netlify, click on it and go to site settings, note down the API ID as ```NETLIFY_SITE_ID_STAGING=<the-API-ID >```.
@@ -239,10 +240,10 @@ In-progress
 </p>
 
 - Login to CircleCI, click on add project -> set up project -> start building -> add manually
-- Go back to the main dashboard -> jobs -> click on the setting of your project -> environment variable -> add variable. Then add all the 6 ENV that we just got. After this, you should get somethign like this:
+- Go back to the main dashboard -> jobs -> click on the setting of your project -> environment variable -> add variable. Then add all the 7 ENV that we just got. After this, you should get something like this:
 
 <p align='center'>
-<img src='https://raw.githubusercontent.com/tripheo0412/create-gatsby-web/master/assets/images/circleci-env.png' width='600' alt='CircleCI ENV'>
+<img src='https://raw.githubusercontent.com/tripheo0412/create-gatsby-web/master/assets/images/circleci-env1.png' width='600' alt='CircleCI ENV'>
 </p>
 
 - Voila! Pat your back because you have done a great job 👏
