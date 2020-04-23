@@ -107,6 +107,7 @@ It will generate the the initial project structure inside the current folder.<br
 ├── .gitignore
 ├── .huskyrc.json
 ├── .lintstagedrc.json
+├── .lighthouserc.json
 ├── .prettierignore
 ├── .prettierrc
 ├── gatsby-browser.js
@@ -143,33 +144,35 @@ It will generate the the initial project structure inside the current folder.<br
 
 9.  **`.lintstagedrc.json`**: Lint-staged configuration file. Already setup to auto lint and format code before commit.
 
-10.  **`.prettierignore`**: This file tells prettier which files it should not track.
+10.  **`.lighthouserc.json`**: Lighthouse configuration file. You can adjust passing parameters here. Already configured with optimum parameters.
 
-11.  **`.prettierrc`**: This is a configuration file for [Prettier](https://prettier.io/). Prettier is a tool to help keep the formatting of your code consistent.
+11.  **`.prettierignore`**: This file tells prettier which files it should not track.
 
-12.  **`gatsby-browser.js`**: This file is where Gatsby expects to find any usage of the [Gatsby browser APIs](https://www.gatsbyjs.org/docs/browser-apis/) (if any). These allow customization/extension of default Gatsby settings affecting the browser.
+12.  **`.prettierrc`**: This is a configuration file for [Prettier](https://prettier.io/). Prettier is a tool to help keep the formatting of your code consistent.
 
-13.  **`gatsby-config.js`**: This is the main configuration file for a Gatsby site. This is where you can specify information about your site (metadata) like the site title and description, which Gatsby plugins you’d like to include, etc. (Check out the [config docs](https://www.gatsbyjs.org/docs/gatsby-config/) for more detail). SEO component already preconfigure, only production deployment will get index by Google bots all preview and staging will have **noindex** meta tag. 
+13.  **`gatsby-browser.js`**: This file is where Gatsby expects to find any usage of the [Gatsby browser APIs](https://www.gatsbyjs.org/docs/browser-apis/) (if any). These allow customization/extension of default Gatsby settings affecting the browser.
 
-14. **`gatsby-node.js`**: This file is where Gatsby expects to find any usage of the [Gatsby Node APIs](https://www.gatsbyjs.org/docs/node-apis/) (if any). These allow customization/extension of default Gatsby settings affecting pieces of the site build process.
+14.  **`gatsby-config.js`**: This is the main configuration file for a Gatsby site. This is where you can specify information about your site (metadata) like the site title and description, which Gatsby plugins you’d like to include, etc. (Check out the [config docs](https://www.gatsbyjs.org/docs/gatsby-config/) for more detail). SEO component already preconfigure, only production deployment will get index by Google bots all preview and staging will have **noindex** meta tag. 
 
-15. **`gatsby-ssr.js`**: This file is where Gatsby expects to find any usage of the [Gatsby server-side rendering APIs](https://www.gatsbyjs.org/docs/ssr-apis/) (if any). These allow customization of default Gatsby settings affecting server-side rendering. Preconfigured to convert stylesheet inline to link, preventing too long head which prevent Facebook, Twitter ... scraping data.
+15. **`gatsby-node.js`**: This file is where Gatsby expects to find any usage of the [Gatsby Node APIs](https://www.gatsbyjs.org/docs/node-apis/) (if any). These allow customization/extension of default Gatsby settings affecting pieces of the site build process.
 
-16. **`jest-preprocess.js`**: This file contains babel options to build gatsby project for Jest testing
+16. **`gatsby-ssr.js`**: This file is where Gatsby expects to find any usage of the [Gatsby server-side rendering APIs](https://www.gatsbyjs.org/docs/ssr-apis/) (if any). These allow customization of default Gatsby settings affecting server-side rendering. Preconfigured to convert stylesheet inline to link, preventing too long head which prevent Facebook, Twitter ... scraping data.
 
-17. **`jest.config.js`**: This file contains all of Jest configurations.
+17. **`jest-preprocess.js`**: This file contains babel options to build gatsby project for Jest testing
 
-18. **`LICENSE`**: This boilerplate is licensed under the MIT license.
+18. **`jest.config.js`**: This file contains all of Jest configurations.
 
-19. **`loadershim.js`**: This files contains loader setting for Jest.
+19. **`LICENSE`**: This boilerplate is licensed under the MIT license.
 
-20. **`package.json`**: A manifest file for Node.js projects, which includes things like metadata (the project’s name, author, etc). This manifest is how npm knows which packages to install for your project.
+20. **`loadershim.js`**: This files contains loader setting for Jest.
 
-21. **`README.md`**: A text file containing useful reference information about your project.
+21. **`package.json`**: A manifest file for Node.js projects, which includes things like metadata (the project’s name, author, etc). This manifest is how npm knows which packages to install for your project.
 
-22. **`tsconfig.json`**: This file contains all of typescript configurations for type checking.
+22. **`README.md`**: A text file containing useful reference information about your project.
 
-23. **`yarn.lock/package-lock.json`** (See `package.json` below, first). This is an automatically generated file based on the exact versions of your npm dependencies that were installed for your project. **(You won’t change this file directly).**
+23. **`tsconfig.json`**: This file contains all of typescript configurations for type checking.
+
+24. **`yarn.lock/package-lock.json`** (See `package.json` below, first). This is an automatically generated file based on the exact versions of your npm dependencies that were installed for your project. **(You won’t change this file directly).**
 
 All configurations are exposed and predefined folder structures, just write codes, no need to config<br>
 Once the installation is done, you can start develop right away!
