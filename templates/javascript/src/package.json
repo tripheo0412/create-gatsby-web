@@ -6,7 +6,7 @@
   "author": "Tri Hoang <tripheo0412@gmail.com>",
   "dependencies": {
     "cross-env": "6.0.0",
-    "gatsby": "^2.19.7",
+    "gatsby": "^3.5.0",
     "gatsby-image": "^2.2.41",
     "gatsby-plugin-canonical-urls": "^2.2.3",
     "gatsby-plugin-i18n": "^1.0.1",
